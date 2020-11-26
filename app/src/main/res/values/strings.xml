@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Veiculos</string>
+    <string name="fuel_flex">Flex</string>
+    <string name="fuel_gasoline">Gasolina</string>
+    <string name="fuel_ethanol">Etanol</string>
+    <string name="fuel_invalid">Nao Informado</string>
+    <string name="no_vehicles">Nenhum carro cadastrado</string>
+    <string name="manufacturer" >Fabricante</string>
+    <string name="model">Modelo</string>
+    <string name="year">Ano</string>
+    <string name="fuel">Combustível</string>
+    <string name="save">Salvar</string>
+</resources>
