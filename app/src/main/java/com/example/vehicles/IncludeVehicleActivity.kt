@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.core.text.set
 import androidx.core.view.get
 import com.example.vehicles.repository.sqlite.SQLiteRepository
 import kotlinx.android.synthetic.main.activity_include_vehicle.*
@@ -36,9 +37,15 @@ class IncludeVehicleActivity : AppCompatActivity() {
                 ethanol = 1
             }
 
-            val vehicle = Vehicle(0,txtModel.text.toString(), Integer.valueOf(txtYear.text.toString()),spnManufacturer.selectedItemPosition,gasoline, ethanol)
-            vehicleDB.save(vehicle)
-            Toast.makeText(this,"Salvo!",Toast.LENGTH_SHORT).show()
+            if(txtModel.text.isEmpty() || txtYear.text.isEmpty() ){
+                Toast.makeText(this,"Dados invalidos!",Toast.LENGTH_LONG).show()
+            }else{
+                val vehicle = Vehicle(0,txtModel.text.toString(), Integer.valueOf(txtYear.text.toString()),spnManufacturer.selectedItemPosition,gasoline, ethanol)
+                vehicleDB.save(vehicle)
+                Toast.makeText(this,"Salvo!",Toast.LENGTH_LONG).show()
+                txtModel.text.clear()
+                txtYear.text.clear()
+            }
         }
     }
 

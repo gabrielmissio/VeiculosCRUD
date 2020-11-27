@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             val vehicle = parent.getItemAtPosition(position) as? Vehicle
             if(vehicle != null){
                 val (id,model,year) = vehicle
-                Toast.makeText(this, "$model $year",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Removido $model $year",Toast.LENGTH_LONG).show()
                 vehicleDB.remove(vehicle)
                 vehicles.remove(vehicle)
                 adapter.notifyDataSetChanged()
